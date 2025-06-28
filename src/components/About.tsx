@@ -39,7 +39,7 @@ const About = () => {
             About Givmi
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Founded in 2024, Treo has grown from a small startup to a global leader in premium retail. 
+            Founded in 2024, Givmi has grown from a small startup to a global leader in premium retail. 
             Our mission is to curate exceptional products and deliver unparalleled shopping experiences.
           </p>
         </div>

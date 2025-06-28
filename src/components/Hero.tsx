@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -17,10 +17,10 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mt-9 leading-tight">
             Premium Shopping
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 block mt-16">
               Experience
             </span>
           </h1>

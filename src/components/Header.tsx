@@ -64,39 +64,47 @@ const Header = () => {
           {isMenuOpen && (
             <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md rounded-lg mt-2 shadow-lg">
-                <a href="#home" className="block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">Home</a>
-                <a href="#products" className="block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">Products</a>
-                <a href="#about" className="block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">About</a>
-                <a href="#contact" className="block px-3 py-2 text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">Contact</a>
+                <a href="#home" className="block px-3 py-2 text-white hover:text-green-600 transition-colors duration-200 font-medium">Home</a>
+                <a href="#products" className="block px-3 py-2 text-white hover:text-green-600 transition-colors duration-200 font-medium">Products</a>
+                <a href="#about" className="block px-3 py-2 text-white hover:text-green-600 transition-colors duration-200 font-medium">About</a>
+                <a href="#contact" className="block px-3 py-2 text-white hover:text-green-600 transition-colors duration-200 font-medium">Contact</a>
                 <div className="flex items-center space-x-4 px-3 py-2">
-                  <button className="p-2 text-gray-700 hover:text-green-600 transition-colors duration-200">
+                  <button className="p-2 text-white hover:text-green-600 transition-colors duration-200">
                     <Search className="h-5 w-5" />
                   </button>
-                  <button className="p-2 text-gray-700 hover:text-green-600 transition-colors duration-200">
+                  <button className="p-2 text-white hover:text-green-600 transition-colors duration-200">
                     <User className="h-5 w-5" />
                   </button>
-                  <button className="p-2 text-gray-700 hover:text-green-600 transition-colors duration-200 relative">
+                  <button className="p-2 text-white hover:text-green-600 transition-colors duration-200 relative">
                     <ShoppingBag className="h-5 w-5" />
                     <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span>
                   </button>
                 </div>
               </div>
+               
             </div>
           )}
         </div>
       </header>
 
-      {/* Trusted Badge - positioned under navbar */}
-      <div className="fixed top-16 left-1/2 transform -translate-x-1/2 z-40 mt-4">
-        <div className="inline-flex items-center space-x-2 bg-white/90 backdrop-blur-md rounded-full px-6 py-3 shadow-lg border border-green-100">
-          <div className="flex items-center space-x-1">
+      {/* Trusted Badge - flows with header */}
+      <div className={`fixed top-16 left-1/2 transform -translate-x-1/2 z-40 transition-all duration-300 ${
+        isScrolled ? 'mt-2' : 'mt-8'
+      }`}>
+        <div className={`inline-flex items-center space-x-1 backdrop-blur-md rounded-full px-4 py-2 shadow-lg transition-all duration-300 ${
+          isScrolled ? 'bg-white/90 border border-green-100' : 'bg-white/10 border border-white/20'
+        }`}>
+          <div className="flex items-center space-x-0.5">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+              <Star key={i} className="h-3 w-3 text-yellow-400 fill-current" />
             ))}
           </div>
-          <span className="text-gray-800 font-medium">Trusted by 10,000+ customers</span>
+          <span className={`text-sm font-medium transition-colors duration-300 ${
+            isScrolled ? 'text-gray-800/50' : 'text-white/70'
+          }`}>Trusted by 10,000+ customers</span>
         </div>
       </div>
+
     </>
   );
 };
