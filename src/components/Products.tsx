@@ -82,23 +82,23 @@ const Products = () => {
     <section id="products" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             Featured Products
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Discover our handpicked collection of premium products, carefully selected for quality, 
             style, and value. Each item represents our commitment to excellence.
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center mb-12 gap-4">
+        <div className="flex flex-wrap justify-center mb-8 sm:mb-12 gap-2 sm:gap-4 px-4">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
                 activeCategory === category
                   ? 'bg-green-600 text-white shadow-lg transform scale-105'
                   : 'bg-white text-gray-700 hover:bg-gray-100 shadow-md hover:shadow-lg'
@@ -110,7 +110,7 @@ const Products = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProducts.map((product) => (
             <div
               key={product.id}
@@ -121,7 +121,7 @@ const Products = () => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 
                 {/* Badges */}
@@ -156,12 +156,12 @@ const Products = () => {
               </div>
 
               {/* Product Info */}
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <div className="mb-2">
                   <span className="text-sm text-green-600 font-medium">{product.category}</span>
                 </div>
                 
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-200">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-200">
                   {product.name}
                 </h3>
 
@@ -185,9 +185,9 @@ const Products = () => {
                 </div>
 
                 {/* Price */}
-                <div className="flex items-center space-x-3">
-                  <span className="text-2xl font-bold text-gray-900">{product.price}</span>
-                  <span className="text-lg text-gray-500 line-through">{product.originalPrice}</span>
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <span className="text-xl sm:text-2xl font-bold text-gray-900">{product.price}</span>
+                  <span className="text-base sm:text-lg text-gray-500 line-through">{product.originalPrice}</span>
                 </div>
               </div>
             </div>
@@ -195,8 +195,8 @@ const Products = () => {
         </div>
 
         {/* Load More Button */}
-        <div className="text-center mt-12">
-          <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+        <div className="text-center mt-8 sm:mt-12 px-4">
+          <button className="bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto">
             Load More Products
           </button>
         </div>
